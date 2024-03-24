@@ -16,7 +16,7 @@ Blipsy is a tool for making tiny games. You are able to do all of your programmi
 *	13 sprite slots
 *	A beeper
 *	JS scripting
-*	2 color pallet
+*	2 color pallete
 
 ##	Your average Blipsy program
 
@@ -30,7 +30,7 @@ Blipsy.boot = () => {
 Blipsy.update = () => {
 	//Runs very tick
 	x++;
-    Blipsy.clearScreen()
+    Blipsy.clearScreen();
 	Blipsy.drawSprite(0, x,0);
 };
 
