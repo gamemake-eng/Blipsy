@@ -87,6 +87,8 @@ var Blipsy = (function(exports) {
 
   }
 
+  exports.boot = () => {}
+
   exports.run = () => {
   	window.requestAnimationFrame(exports.run)
     exports.mouseDown = mousedown
@@ -118,7 +120,7 @@ var Blipsy = (function(exports) {
    exports.mouse.y = 0
    exports.mouseDown = false;
    exports.clearScreen()
-   init()
+   exports.boot()
  }
 
  exports.loadData = (cartdata)=>{
@@ -182,7 +184,7 @@ exports.init = (id, script) => {
   cd.id = "spp"
   cd.innerHTML = data.code
   document.body.appendChild(cd)
-  init()
+  exports.boot()
   
   exports.run()
 }
