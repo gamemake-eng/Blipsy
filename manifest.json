@@ -1,0 +1,23 @@
+{
+	"name": "Blipsy",
+	"short_name": "Blipsy",
+	"start_url": "index.html",
+	"display": "standalone",
+	"background_color": "#250f2e",
+	"theme_color": "#250f2e",
+	"orientation": "landscape-primary",
+	"icons": [
+		{
+			"src": "maskable-icon.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "maskable"
+		},
+		{
+			"src": "maskable-icon.png",
+			"sizes": "512x512",
+			"type": "image/png",
+			"purpose": "any"
+		}
+	]
+}
