@@ -1,5 +1,5 @@
 #	Blipsy
 
-<center>
+<p align="center">
 	<img src="maskable-icon.png" />
-</center>
+</p>
