@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title></title>
+	<style type="text/css">
+		body {
+			background: #250f2e;
+		}
+		#spr {
+		  display: flex;
+		  flex-direction: row;
+		  flex-wrap: wrap;
+		  width: 50%;
+
+		}
+
+		#items {
+		  display: flex;
+		  flex-direction: row;
+		  flex-wrap: nowrap;
+		  overflow: scroll;
+
+
+		}
+
+		#sprd {
+		  display: flex;
+		  align-items: flex-start;
+		  flex-direction: column;
+		  
+		  padding: 5px;
+
+		}
+
+		#pixeldraw {
+			cursor: crosshair;
+		}
+	</style>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/ace/1.32.8/ace.min.js" integrity="sha512-3c17/omJ/iHIFqPLIThx7TXuOuu1+umsw5SfeZhJxoYbCwTdnqbIlgnAUQOUBxvi6pl1Pu131NkC4ga0cliHHw==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+	<script src="https://code.jquery.com/jquery-2.2.4.js"></script>
+</head>
+<body>
+	
+	<script type="text/javascript" src="globals.js"></script>
+
+	<div id="items">
+		<div id="sprd" onload="Preview.init()">
+
+
+
+				<canvas id="preview"></canvas>
+				<div id="spr">
+					<button id="restart">Restart</button>
+					<button id="load">Load</button>
+					<button id="save">Save</button>
+					<input id="loadfile" type="file" style="display: none" accept=".txt,.json,.blipsy" />
+				</div>
+				
+
+				
+
+
+			</div>
+		<div id="sprd" onload="Canvas.init()">
+			<button id="mode">Brush</button>
+			<canvas id="pixeldraw"></canvas>
+
+			<div id="spr">
+				<button class="frame">0</button>
+				<button class="frame">1</button>
+				<button class="frame">2</button>
+				<button class="frame">3</button>
+				<button class="frame">4</button>
+				<button class="frame">5</button>
+				<button class="frame">6</button>
+				<button class="frame">7</button>
+				<button class="frame">8</button>
+				<button class="frame">9</button>
+				<button class="frame">10</button>
+				<button class="frame">10</button>
+				<button class="frame">10</button>
+				<button class="frame">10</button>
+				
+				
+
+			</div>
+			
+		</div>
+		<div id="codewin">
+
+			<div id="codeedit" style="width: 600px; height: 300px; position: relative;">var x;
+var y;
+var init = () => {
+	x = 0;
+	y = 0;
+};
+
+Blipsy.update = () => {
+	x += (Blipsy.mouse.x - x) * 0.1;
+	y += (Blipsy.mouse.y - y) * 0.1;
+	Blipsy.drawSprite(0, x,y);
+};</div>
+
+		</div>
+
+			<script type="text/javascript" src="spritecanvas.js"></script>
+			<script type="text/javascript" src="preview.js"></script>
+			<script type="text/javascript">
+				let datajson = {"sprites":[[1,0,0,1,0,0,0,1,1,0,0,1,0,0,0,0,1,0,0,1,0,0,0,1,1,0,0,1,0,0,0,1,1,1,1,1,0,0,0,1,1,0,0,1,0,0,0,1,1,0,0,1,0,0,0,1,1,0,0,1,0,0,0,1],[1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],"code":"//You can edit this!\nvar x;\nvar y;\nvar dir = {\n    x : Math.random(1),\n    y: Math.random(1)\n}\nvar points;\nvar init = () => {\n\tx = 0;\n\ty = 0;\n\tpoints = []\n};\n\nBlipsy.update = () => {\n    Blipsy.clearScreen()\n\tx += dir.x;\n\ty += dir.y;\n\t\n\tif((x+8) > 64)\n\t{\n\t    dir.x = -1\n\t}\n\t\n\tif((y+8) > 64)\n\t{\n\t    dir.y = -1\n\t}\n\t\n\tif((x) <= 0)\n\t{\n\t    dir.x = 1\n\t}\n\t\n\tif((y) <= 0)\n\t{\n\t    dir.y = 1\n\t}\n\t\n\t\n\tBlipsy.drawSprite(0, x,y);\n\t\n\t\n\t\n};"}
+				Preview.load(datajson)
+				Blipsy.restart()
+			</script>
+		</div>
+</body>
+</html>
