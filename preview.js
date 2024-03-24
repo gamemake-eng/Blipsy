@@ -50,10 +50,10 @@ var Preview = (function(exports) {
 
 		})*/
 		editor = ace.edit("codeedit");
-	    editor.setTheme("ace/theme/monokai");
-	    editor.session.setMode("ace/mode/javascript");
+		editor.setTheme("ace/theme/monokai");
+		editor.session.setMode("ace/mode/javascript");
 		Blipsy.init("preview", 
-				editor.getValue())
+			editor.getValue())
 		Blipsy.setCode(editor.getValue())
 
 
@@ -72,8 +72,8 @@ var Preview = (function(exports) {
 
 let res = document.getElementById("restart");
 res.addEventListener("click", (event)=>{
-Blipsy.setCode(editor.getValue())
-Blipsy.restart()
+	Blipsy.setCode(editor.getValue())
+	Blipsy.restart()
 })
 
 let ld = document.getElementById("load");

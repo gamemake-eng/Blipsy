@@ -23,7 +23,6 @@ var Blipsy = (function(exports) {
   let worker;
   
   function drawSprite(i, x, y){
-  	//ctx.strokeStyle = "#787877"
   	let r = Math.floor((x)/exports.scale)
   	let c = Math.floor((y)/exports.scale)
   	
@@ -34,7 +33,6 @@ var Blipsy = (function(exports) {
 
 
       if(data.sprites[i][d] == 1){
-        //backbuffer.fillRect(((rx)+((d%8)*exports.scale)), ((ry)+(((Math.floor(d/8))))*exports.scale), exports.scale,exports.scale)
         exports.drawPixel(rx+((d%8)), ry+(Math.floor(d/8)))
       }
 
@@ -165,7 +163,7 @@ exports.init = (id, script) => {
   let offscreen = bbc.transferControlToOffscreen()
   worker.postMessage({canvas: offscreen}, [offscreen])
   
-  //backbuffer = bbc.getContext("2d")
+  
 
   exports.mouse.x = 0
   exports.mouse.y = 0
@@ -185,7 +183,7 @@ exports.init = (id, script) => {
   cd.innerHTML = data.code
   document.body.appendChild(cd)
   init()
-  	//exports.update = update
+  
   exports.run()
 }
 return exports;

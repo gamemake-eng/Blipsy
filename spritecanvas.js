@@ -43,24 +43,24 @@ var Canvas = (function(exports) {
 		ctx.fillStyle = "#FFFFFF"
 
 		for (var d = 0; d < Blipsy.sprites[currspr].length; d++) {
-		    if (Blipsy.sprites[currspr][d] == 1) {
-		      
-		      ctx.fillRect(
-		        (d % sprW) * gridsize,
-		        Math.floor(d / sprH) * gridsize,
-		        1 * gridsize,
-		        1 * gridsize
-		      );
-		      
-		    }
-		 }
+			if (Blipsy.sprites[currspr][d] == 1) {
+				
+				ctx.fillRect(
+					(d % sprW) * gridsize,
+					Math.floor(d / sprH) * gridsize,
+					1 * gridsize,
+					1 * gridsize
+					);
+				
+			}
+		}
 
 		if (mousedown === true) {
-		    if(x < 8 && y < 8 && x > -1 && y > -1){
-		      
-		    	if(mode.innerText == "Brush"){Blipsy.sprites[currspr][x + sprW * y] = 1;}
-		    	if(mode.innerText == "Eraser"){Blipsy.sprites[currspr][x + sprW * y] = 0;}
-		    }
+			if(x < 8 && y < 8 && x > -1 && y > -1){
+				
+				if(mode.innerText == "Brush"){Blipsy.sprites[currspr][x + sprW * y] = 1;}
+				if(mode.innerText == "Eraser"){Blipsy.sprites[currspr][x + sprW * y] = 0;}
+			}
 		}
 		ctx.lineWidth = 2
 		ctx.strokeStyle = "#787877"
@@ -78,49 +78,49 @@ var Canvas = (function(exports) {
 		document.getElementById("pixeldraw").width = sprW * gridsize
 		document.getElementById("pixeldraw").height = sprH * gridsize
 		document.getElementById("pixeldraw").addEventListener("mousemove", (e)=>{
-		  let rect = e.target.getBoundingClientRect();
+			let rect = e.target.getBoundingClientRect();
 	      mouseX = e.clientX - rect.left; //x position within the element.
 	      mouseY = e.clientY - rect.top;  //y position within the element.
 	      
-		})
+	  })
 
 		document.getElementById("pixeldraw").addEventListener("mousedown", (e)=>{
-		  mousedown = true
-	      
+			mousedown = true
+			
 		})
 
 		document.getElementById("pixeldraw").addEventListener("mouseup", (e)=>{
-		  mousedown = false
-	      
+			mousedown = false
+			
 		})
 		ctx = document.getElementById("pixeldraw").getContext("2d")
 		mode = document.getElementById("mode");
 		mode.addEventListener("click", (event)=>{
-		  if(mode.innerText == "Brush"){
-		    mode.innerText = "Eraser"
-		  }else {
-		    mode.innerText = "Brush"
-		  }
+			if(mode.innerText == "Brush"){
+				mode.innerText = "Eraser"
+			}else {
+				mode.innerText = "Brush"
+			}
 		})
 		let buttons = document.querySelectorAll(".frame");
 		for (let i = 0; i < buttons.length; i++) {
-		  
-		  if (i != "entries" || i != "keys") {
-		  	buttons[i].innerText = i
-		    buttons[i].addEventListener("click", (event) => {
-		      currspr = parseInt(buttons[i].innerText);
-		      
-		    });
-		  }
+			
+			if (i != "entries" || i != "keys") {
+				buttons[i].innerText = i
+				buttons[i].addEventListener("click", (event) => {
+					currspr = parseInt(buttons[i].innerText);
+					
+				});
+			}
 		}
 
 		for (let i = 0; i < buttons.length+1; i++) {
 			let templist = []
-		  
-		  for (let d = 0; d < sprW * sprH; d++) {
-		    templist.push(0);
-		  }
-		  Blipsy.appendBank(templist)
+			
+			for (let d = 0; d < sprW * sprH; d++) {
+				templist.push(0);
+			}
+			Blipsy.appendBank(templist)
 		}
 
 
