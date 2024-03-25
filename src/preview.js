@@ -123,7 +123,7 @@ ep.addEventListener("click", (event) => {
 </head>
 <body style="margin:0px;">
 <div style="display:flex;justify-content: center;align-content: center;align-items: center;flex-wrap: nowrap;flex-direction: column;width: 100vw;height: 100vh;">
-<iframe src="${window.location.origin}/player.html?data=${data}" width="${Blipsy.width*Blipsy.scale}" height="${(Blipsy.height*Blipsy.scale)+30}" style="border-width:0px;"></iframe>
+<iframe src="${window.location.origin+window.location.pathname}player.html?data=${data}" width="${Blipsy.width*Blipsy.scale}" height="${(Blipsy.height*Blipsy.scale)+30}" style="border-width:0px;"></iframe>
 </div>
 </body>
 </html>
