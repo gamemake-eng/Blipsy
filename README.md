@@ -9,6 +9,7 @@ Blipsy is a tool for making tiny games. You are able to do all of your programmi
 ##	TODO
 *	Web exports
 *	Map editor (maybe)
+*	Making it a PWA
 *	IDK what else LOL
 
 ##	Specs

@@ -12,7 +12,8 @@ var Blipsy = (function(exports) {
   let mousedown = false;
   let maps = [
     []
-    ]
+  ]
+
   let data = {
   	sprites: [],
   	code: ``
@@ -83,6 +84,8 @@ var Blipsy = (function(exports) {
 
   exports.mouseDown = false
 
+  exports.keys = {}
+
   exports.update = () => {
 
   }
@@ -90,6 +93,8 @@ var Blipsy = (function(exports) {
   exports.boot = () => {}
 
   exports.run = () => {
+    document.getElementById(exports.id).width = exports.width * exports.scale
+  document.getElementById(exports.id).height = exports.height * exports.scale
   	window.requestAnimationFrame(exports.run)
     exports.mouseDown = mousedown
 
@@ -155,6 +160,16 @@ exports.init = (id, script) => {
 
   document.getElementById(id).addEventListener("mouseup", (e)=>{
     mousedown = false
+
+  })
+
+  document.addEventListener("keydown", (e)=>{
+    exports.keys[e.key] = true;
+
+  })
+  document.addEventListener("keyup", (e)=>{
+    exports.keys[e.key] = false;
+    console.log(exports.keys)
 
   })
   ctx = document.getElementById(id).getContext("2d")
