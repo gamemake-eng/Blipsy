@@ -109,5 +109,35 @@ sv.addEventListener("click", (event)=>{
 
 	window.URL.revokeObjectURL(objurl)
 })
+let ep = document.getElementById("export")
+ep.addEventListener("click", (event) => {
+	let data = btoa(Blipsy.getData())
+	let html = `
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Blipsy Game</title>
+
+</head>
+<body style="margin:0px;">
+<div style="display:flex;justify-content: center;align-content: center;align-items: center;flex-wrap: nowrap;flex-direction: column;width: 100vw;height: 100vh;">
+<iframe src="${window.location.origin}/player.html?data=${data}" width="${Blipsy.width*Blipsy.scale}" height="${(Blipsy.height*Blipsy.scale)+30}" style="border-width:0px;"></iframe>
+</div>
+</body>
+</html>
+	`
+	const blob = new Blob([html], {type: "text/html"})
+	const objurl = window.URL.createObjectURL(blob)
+
+	const downloadLink = document.createElement("a")
+	downloadLink.href = objurl
+	downloadLink.download = "game.html"
+
+	downloadLink.click();
+
+	window.URL.revokeObjectURL(objurl)
+})
 setInterval(() => {Blipsy.setCode(editor.getValue())},5)
 Preview.init()

@@ -7,7 +7,7 @@
 Blipsy is a tool for making tiny games. You are able to do all of your programming and art right in the simple to understand editor. You can also share programs made with Blipsy with others though json files and soon web exports. Blipsy is still in VERY early alpha but it should have enough to create simple fun games.
 
 ##	TODO
-*	Web exports
+*	~Web exports~
 *	Map editor (maybe)
 *	Making it a PWA
 *	IDK what else LOL
@@ -56,6 +56,9 @@ Blipsy.mouse.y
 
 //Check is a key is pressed
 Blipsy.keys["ArrowUp"] //ArrowUp, ArrowDown, Space, etc
+
+//Plays a tone for a split second
+Blipsy.beepTone(hertz)
 
 //Yep, that is all you need to start making programs with blipsy!
 ```

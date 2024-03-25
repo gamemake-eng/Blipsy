@@ -52,7 +52,7 @@ var Blipsy = (function(exports) {
     })
   }
   
-  /*exports.beepTone = (tone) => {
+  exports.beepTone = (tone) => {
     osc = audioctx.createOscillator()
     gain = audioctx.createGain()
 
@@ -67,10 +67,10 @@ var Blipsy = (function(exports) {
     osc.frequency.value = tone
     osc.start()
 
-    setTimeout(() => {
-      osc.stop()
-    }, 300)
-  }*/
+    
+    osc.stop(audioctx.currentTime + 0.1)
+    
+  }
   exports.scale = sc;
   exports.width = gridW;
   exports.height = gridH;
@@ -196,6 +196,7 @@ exports.init = (id, script) => {
 
   })
   ctx = document.getElementById(id).getContext("2d")
+  ctx.imageSmoothingEnabled= false
 
   bbc = document.createElement("canvas")
   bbc.width = exports.width * exports.scale

@@ -3,6 +3,7 @@ let canvas;
 onmessage = function (e) {
 	if (e.data.canvas) {
 		ctx = e.data.canvas.getContext("2d")
+		ctx.imageSmoothingEnabled= false
 		canvas = e.data.canvas
 	}else {
 		
