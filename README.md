@@ -49,5 +49,12 @@ Blipsy.drawPixel(x, y)
 //Clears screen
 Blipsy.clearScreen()
 
+//Get the mouse x and y
+Blipsy.mouse.x
+Blipsy.mouse.y
+
+//Check is a key is pressed
+Blipsy.keys["ArrowUp"] //ArrowUp, ArrowDown, Space, etc
+
 //Yep, that is all you need to start making programs with blipsy!
 ```
