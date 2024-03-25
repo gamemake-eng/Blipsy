@@ -7,6 +7,9 @@ var Blipsy = (function(exports) {
   let backbuffer;
   let offscreen;
   let bbc;
+  let audioctx;
+  let osc;
+  let gain;
   let mouseX = 0;
   let mouseY = 0;
   let mousedown = false;
@@ -48,6 +51,26 @@ var Blipsy = (function(exports) {
       arr[i] = 0
     })
   }
+  
+  /*exports.beepTone = (tone) => {
+    osc = audioctx.createOscillator()
+    gain = audioctx.createGain()
+
+
+
+    
+    osc.connect(gain)
+    gain.connect(audioctx.destination)
+    
+    osc.type = "sine"
+    gain.gain.value = 0.5
+    osc.frequency.value = tone
+    osc.start()
+
+    setTimeout(() => {
+      osc.stop()
+    }, 300)
+  }*/
   exports.scale = sc;
   exports.width = gridW;
   exports.height = gridH;
@@ -188,6 +211,8 @@ exports.init = (id, script) => {
 
 
   mousedown = false;
+
+  audioctx = new AudioContext()
 
 
 
