@@ -19,6 +19,7 @@ Blipsy is a tool for making tiny games. You are able to do all of your programmi
 *	JS scripting
 *	2 color pallete
 
+
 ##	Your average Blipsy program
 
 ```js
