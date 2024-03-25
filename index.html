@@ -50,7 +50,7 @@
 </head>
 <body>
 	
-	<script type="text/javascript" src="globals.js"></script>
+	<script type="text/javascript" src="src/globals.js"></script>
 	<div id="page">
 		<div id="items">
 			<div id="sprd" onload="Preview.init()">
@@ -101,28 +101,17 @@
 
 			</div>
 
-				<script type="text/javascript" src="spritecanvas.js"></script>
-				<script type="text/javascript" src="preview.js"></script>
+				<script type="text/javascript" src="src/spritecanvas.js"></script>
+				<script type="text/javascript" src="src/preview.js"></script>
 				<script type="text/javascript">
 					let datajson = {"sprites":[[1,0,0,1,0,0,0,1,1,0,0,1,0,0,0,0,1,0,0,1,0,0,0,1,1,0,0,1,0,0,0,1,1,1,1,1,0,0,0,1,1,0,0,1,0,0,0,1,1,0,0,1,0,0,0,1,1,0,0,1,0,0,0,1],[1,1,1,1,1,1,1,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,0,0,0,0,0,0,1,1,1,1,1,1,1,1,1],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0],[0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0]],"code":"//You can edit this!\nvar x;\nvar y;\nvar dir = {\n    x : Math.random(1),\n    y: Math.random(1)\n}\nvar points;\nBlipsy.boot = () => {\n\tx = 0;\n\ty = 0;\n\tpoints = []\n};\n\nBlipsy.update = () => {\n    Blipsy.clearScreen()\n\tx += dir.x;\n\ty += dir.y;\n\t\n\tif((x+8) > 64)\n\t{\n\t    dir.x = -1\n\t}\n\t\n\tif((y+8) > 64)\n\t{\n\t    dir.y = -1\n\t}\n\t\n\tif((x) <= 0)\n\t{\n\t    dir.x = 1\n\t}\n\t\n\tif((y) <= 0)\n\t{\n\t    dir.y = 1\n\t}\n\t\n\t\n\tBlipsy.drawSprite(0, x,y);\n\t\n\t\n\t\n};"}
 					Preview.load(datajson)
 					Blipsy.restart()
 				</script>
 			</div>
-
-			<script>
-				const updateChannel = new BroadcastChannel('precache-channel');
-updateChannel.addEventListener('message', event => {
-  if (confirm(`New content is available!. Click OK to refresh`)) {
-    window.location.reload();
-  }
-});
-				if('serviceWorker' in navigator) {
-				  navigator.serviceWorker.register('/sw.js', { scope: '/' });
-				}
-			</script>
 		<p style="color: #5505a1;">Made with illegal organ donations by <a href="https://michealtheratz.neocities.org">michealtheratz</a>!</p>
 		<p style="color: #5505a1;">Github: <a href="https://github.com/gamemake-eng/Blipsy">https://github.com/gamemake-eng/Blipsy</a></p>
+		<p style="color: #5505a1;">Blipsy v0.0.1 alpha (Version jellyfish)</p>
 	</div>
 </body>
 </html>
