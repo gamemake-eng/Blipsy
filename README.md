@@ -15,7 +15,7 @@ Blipsy is a tool for making tiny games. You are able to do all of your programmi
 ##	Specs
 *	64x64 pixels
 *	13 sprite slots
-*	A beeper (comming soon)
+*	One sinewave oscillator
 *	JS scripting
 *	2 color pallete
 
