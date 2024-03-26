@@ -25,7 +25,7 @@
 	if (params.get("data")) {
 		let jsn;
 		try{
-			jsn = JSON.parse(atob(params.get("data")))
+			jsn = JSON.parse(atob(params.get("data").replace(/ /g, "+")))
 			Blipsy.loadData(jsn)
 			Blipsy.restart()
 		}catch(err){
