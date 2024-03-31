@@ -135,4 +135,41 @@ var Canvas = (function(exports) {
 	
 })({})
 
+let sld = document.getElementById("sprload");
+sld.addEventListener("click", (event)=>{
+	$("#sloadfile").trigger("click")
+})
+
+let sfilepick = document.getElementById("sloadfile")
+sfilepick.addEventListener("change", function(event) {
+	let file = this.files[0]
+	if(file){
+		const reader = new FileReader();
+		reader.onload = (e) => {
+			let data = e.target.result
+			for(let i in Blipsy.sprites){Blipsy.sprites[i] = JSON.parse(data).sprites[i]}
+			Blipsy.restart()
+		}
+		reader.readAsText(file);
+	}
+	
+})
+
+let ssv = document.getElementById("sprsave");
+ssv.addEventListener("click", (event)=>{
+	const d = {
+		sprites: Blipsy.sprites
+	}
+	const blob = new Blob([JSON.stringify(d)], {type: "application/json"})
+	const objurl = window.URL.createObjectURL(blob)
+
+	const downloadLink = document.createElement("a")
+	downloadLink.href = objurl
+	downloadLink.download = "sprites.json"
+
+	downloadLink.click();
+
+	window.URL.revokeObjectURL(objurl)
+})
+
 Canvas.init()

@@ -13,8 +13,7 @@
 		  display: flex;
 		  flex-direction: row;
 		  flex-wrap: wrap;
-		  width: 50%;
-
+		  
 		}
 
 		#items {
@@ -72,10 +71,16 @@
 
 				</div>
 			<div id="sprd" onload="Canvas.init()">
-				<button id="mode">Brush</button>
+				<div id="spr">
+					<button id="mode">Brush</button>
+					<button id="sprsave">Save</button>
+					<button id="sprload">Load</button>
+					<input id="sloadfile" type="file" style="display: none" accept=".txt,.json,.blipsyspr" />
+				</div>
+				
 				<canvas id="pixeldraw"></canvas>
 
-				<div id="spr">
+				<div id="spr" style="width:60%">
 					<button class="frame">0</button>
 					<button class="frame">1</button>
 					<button class="frame">2</button>
@@ -113,7 +118,7 @@
 		<p style="color: #FFFFFF;">Made with illegal organ donations by <a href="https://michealtheratz.neocities.org">michealtheratz</a>!</p>
 		<p style="color: #FFFFFF;">Github: <a href="https://github.com/gamemake-eng/Blipsy">https://github.com/gamemake-eng/Blipsy</a></p>
 		<p><a href="./docs.html">Blipsy Docs</a></p>
-		<p style="color: #FFFFFF;">Blipsy v0.0.1 alpha (Version jellyfish)</p>
+		<p style="color: #FFFFFF;">Blipsy v0.0.2 alpha (Version jellyfish)</p>
 	</div>
 </body>
 </html>
